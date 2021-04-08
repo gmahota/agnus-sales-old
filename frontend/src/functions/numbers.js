@@ -1,19 +1,25 @@
-import accounting from 'accounting'
+import accounting from "accounting";
 
 export function random(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 export function formatPercent(percent) {
   return `${accounting
-    .formatMoney(percent, '', 1, ',', '.')
-    .replace(/\.00$/g, '')}%`
+    .formatMoney(percent, "", 1, ",", ".")
+    .replace(/\.00$/g, "")}%`;
 }
 
 export function formatCurrency(value) {
-  return accounting.formatMoney(value, '$', 2, ',', '.').replace(/\.00$/g, '')
+  return accounting.formatMoney(value, "$", 2, ",", ".").replace(/\.00$/g, "");
+}
+
+export function formatCurrencyMT(value, coin) {
+  return (
+    accounting.formatMoney(value, "", 2, ".", ",").replace(/\.00$/g, "") + " MT"
+  );
 }
 
 export function formatNumber(value) {
-  return accounting.formatMoney(value, '', 2, ',', '.').replace(/\.00$/g, '')
+  return accounting.formatMoney(value, "", 2, ",", ".").replace(/\.00$/g, "");
 }

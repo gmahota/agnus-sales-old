@@ -1,10 +1,8 @@
 import React from "react";
-import { FiPlus } from "react-icons/fi";
+import { FiBox } from "react-icons/fi";
 import SectionTitle from "../../components/section-title";
 import Widget from "../../components/widget";
 import { formatCurrencyMT } from "../../functions/numbers";
-import Modal from "../../components/orders/modal-line";
-import FormItem from "../../components/orders/form-item";
 
 export default function OrderCreate() {
   const items = [
@@ -50,7 +48,8 @@ export default function OrderCreate() {
             </div>
             <div className="uppercase font-bold text-base tracking-wider flex flex-row items-center justify-start whitespace-nowrap">
               <div className="flex flex-row items-center justify-start space-x-2 text-blue-500">
-                <Modal title="Document Item" body={<FormItem />} />
+                <FiBox size={28} className="stroke-current text-blue-500" />
+                <span>Company logo</span>
               </div>
             </div>
           </div>
@@ -131,6 +130,36 @@ export default function OrderCreate() {
                   </tr>
                 </tbody>
               </table>
+
+              {/* <div className="font-bold mb-2">Payment details</div>
+              <table className="w-full table-auto text-left">
+                <tbody>
+                  <tr>
+                    <td className="pr-3 py-2 text-gray-500 text-xs leading-4 font-medium uppercase tracking-wider">
+                      Bank
+                    </td>
+                    <td className="pl-3 py-2 whitespace-nowrap">
+                      {account.bank}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-3 py-2 text-gray-500 text-xs leading-4 font-medium uppercase tracking-wider">
+                      Account
+                    </td>
+                    <td className="pl-3 py-2 whitespace-nowrap">
+                      {account.account}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-3 py-2 text-gray-500 text-xs leading-4 font-medium uppercase tracking-wider">
+                      Due date
+                    </td>
+                    <td className="pl-3 py-2 whitespace-nowrap">
+                      {account.date}
+                    </td>
+                  </tr>
+                </tbody>
+              </table> */}
             </div>
             <div className="flex flex-col w-1/2 self-center text-right">
               <span className="font-bold">Total amount</span>

@@ -1,10 +1,10 @@
 
-export const TextInput = ({inline = false}) => (
+export const TextInput = ({type="text",label="Label",inline = false}) => (
   <div className={`form-element ${inline ? 'form-element-inline' : ''}`}>
-    <div className="form-label">Label</div>
+    <div className="form-label">{label}</div>
     <input
       name="name"
-      type="text"
+      type={type}
       className="form-input"
       placeholder="Enter something..."
     />
